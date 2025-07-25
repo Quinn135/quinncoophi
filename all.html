@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="description" content="This is all of my websites">
+    <title>All of Quinn</title>
+</head>
+
+<body>
+    my websites:
+    <ul id="list"></ul>
+    <br>
+    <span id="thanks" hidden="true">thank you netlify, github, vscode, all of the website frameworks like react, and the
+        entire open source community for largely
+        enabling
+        this</span>
+    <style>
+        html,
+        body,
+        p,
+        ol,
+        ul,
+        li,
+        dl,
+        dt,
+        dd,
+        blockquote,
+        figure,
+        fieldset,
+        legend,
+        textarea,
+        pre,
+        iframe,
+        hr,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            padding: 0
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+            font-weight: normal
+        }
+
+        ul {
+            list-style: inside
+        }
+
+        button,
+        input,
+        select {
+            margin: 0
+        }
+
+        html {
+            box-sizing: border-box
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit
+        }
+
+        img,
+        video {
+            height: auto;
+            max-width: 100%
+        }
+
+        iframe {
+            border: 0
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        td,
+        th {
+            padding: 0
+        }
+
+        body {
+            background: black;
+            color: white;
+
+            padding: 2rem;
+        }
+
+        p:focus {
+            outline: none;
+        }
+
+        a {
+            color: hsl(219, 92%, 51%);
+        }
+    </style>
+    <script>
+        const sites = [
+            "alloew.com", "quinncoop.com", "airlift.alloew.com", "bob.alloew.com", "confetti.alloew.com", "emoji.alloew.com", "hi.alloew.com", "jacob.alloew.com", "shmurplelurplepurple.alloew.com", "spend.alloew.com", "think.alloew.com", "time.alloew.com", "w.alloew.com", "b.alloew.com", "weeb.alloew.com", "words.alloew.com", "b.quinncoop.com", "images.quinncoop.com", "old.quinncoop.com", "scroll.quinncoop.com"
+        ];
+
+        const listElem = document.getElementById("list");
+
+        window.addEventListener("load", () => {
+            var i = 0;
+
+            function loop() {
+                setTimeout(() => {
+                    if (i < sites.length) {
+                        var site = sites[i];
+
+                        const li = document.createElement("li");
+                        const a = document.createElement("a");
+                        a.href = `https://${site}/`;
+                        a.innerText = site;
+                        li.appendChild(a);
+                        listElem.appendChild(li);
+                        i++;
+
+                        loop();
+                    } else {
+                        document.getElementById("thanks").hidden = false;
+                    }
+                }, (30.0 / (i ** 0.5)))
+            }
+
+            loop();
+        })
+    </script>
+</body>
+
+</html>
